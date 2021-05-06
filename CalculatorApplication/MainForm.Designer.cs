@@ -1,7 +1,7 @@
 ﻿
 namespace CalculatorApplication
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -57,6 +57,11 @@ namespace CalculatorApplication
             this.clearAllButton = new System.Windows.Forms.Button();
             this.clearValueButton = new System.Windows.Forms.Button();
             this.modButton = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.previewLabel = new System.Windows.Forms.Label();
+            this.currentNumberLabel = new System.Windows.Forms.Label();
+            this.valueLabel = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // negateButton
@@ -67,7 +72,7 @@ namespace CalculatorApplication
             this.negateButton.Name = "negateButton";
             this.negateButton.Padding = new System.Windows.Forms.Padding(4, 0, 0, 6);
             this.negateButton.Size = new System.Drawing.Size(72, 52);
-            this.negateButton.TabIndex = 0;
+            this.negateButton.TabIndex = 24;
             this.negateButton.Text = "±";
             this.negateButton.UseVisualStyleBackColor = true;
             // 
@@ -79,9 +84,10 @@ namespace CalculatorApplication
             this.zeroButton.Name = "zeroButton";
             this.zeroButton.Padding = new System.Windows.Forms.Padding(4, 0, 0, 2);
             this.zeroButton.Size = new System.Drawing.Size(72, 52);
-            this.zeroButton.TabIndex = 1;
+            this.zeroButton.TabIndex = 25;
             this.zeroButton.Text = "0";
             this.zeroButton.UseVisualStyleBackColor = true;
+            this.zeroButton.Click += new System.EventHandler(this.zeroButton_Click);
             // 
             // decimalPointButton
             // 
@@ -91,7 +97,7 @@ namespace CalculatorApplication
             this.decimalPointButton.Name = "decimalPointButton";
             this.decimalPointButton.Padding = new System.Windows.Forms.Padding(4, 0, 0, 2);
             this.decimalPointButton.Size = new System.Drawing.Size(72, 52);
-            this.decimalPointButton.TabIndex = 1;
+            this.decimalPointButton.TabIndex = 26;
             this.decimalPointButton.Text = ".";
             this.decimalPointButton.UseVisualStyleBackColor = true;
             // 
@@ -103,7 +109,7 @@ namespace CalculatorApplication
             this.resultButton.Name = "resultButton";
             this.resultButton.Padding = new System.Windows.Forms.Padding(3, 0, 0, 6);
             this.resultButton.Size = new System.Drawing.Size(72, 52);
-            this.resultButton.TabIndex = 2;
+            this.resultButton.TabIndex = 27;
             this.resultButton.Text = "=";
             this.resultButton.UseVisualStyleBackColor = true;
             // 
@@ -115,9 +121,10 @@ namespace CalculatorApplication
             this.oneButton.Name = "oneButton";
             this.oneButton.Padding = new System.Windows.Forms.Padding(4, 0, 0, 2);
             this.oneButton.Size = new System.Drawing.Size(72, 52);
-            this.oneButton.TabIndex = 1;
+            this.oneButton.TabIndex = 20;
             this.oneButton.Text = "1";
             this.oneButton.UseVisualStyleBackColor = true;
+            this.oneButton.Click += new System.EventHandler(this.oneButton_Click);
             // 
             // twoButton
             // 
@@ -127,9 +134,10 @@ namespace CalculatorApplication
             this.twoButton.Name = "twoButton";
             this.twoButton.Padding = new System.Windows.Forms.Padding(4, 0, 0, 2);
             this.twoButton.Size = new System.Drawing.Size(72, 52);
-            this.twoButton.TabIndex = 1;
+            this.twoButton.TabIndex = 21;
             this.twoButton.Text = "2";
             this.twoButton.UseVisualStyleBackColor = true;
+            this.twoButton.Click += new System.EventHandler(this.twoButton_Click);
             // 
             // threeButton
             // 
@@ -139,9 +147,10 @@ namespace CalculatorApplication
             this.threeButton.Name = "threeButton";
             this.threeButton.Padding = new System.Windows.Forms.Padding(4, 0, 0, 2);
             this.threeButton.Size = new System.Drawing.Size(72, 52);
-            this.threeButton.TabIndex = 1;
+            this.threeButton.TabIndex = 22;
             this.threeButton.Text = "3";
             this.threeButton.UseVisualStyleBackColor = true;
+            this.threeButton.Click += new System.EventHandler(this.threeButton_Click);
             // 
             // addButton
             // 
@@ -151,7 +160,7 @@ namespace CalculatorApplication
             this.addButton.Name = "addButton";
             this.addButton.Padding = new System.Windows.Forms.Padding(4, 0, 0, 6);
             this.addButton.Size = new System.Drawing.Size(72, 52);
-            this.addButton.TabIndex = 1;
+            this.addButton.TabIndex = 23;
             this.addButton.Text = "+";
             this.addButton.UseVisualStyleBackColor = true;
             // 
@@ -163,9 +172,10 @@ namespace CalculatorApplication
             this.fourButton.Name = "fourButton";
             this.fourButton.Padding = new System.Windows.Forms.Padding(4, 0, 0, 2);
             this.fourButton.Size = new System.Drawing.Size(72, 52);
-            this.fourButton.TabIndex = 0;
+            this.fourButton.TabIndex = 16;
             this.fourButton.Text = "4";
             this.fourButton.UseVisualStyleBackColor = true;
+            this.fourButton.Click += new System.EventHandler(this.fourButton_Click);
             // 
             // fiveButton
             // 
@@ -175,9 +185,10 @@ namespace CalculatorApplication
             this.fiveButton.Name = "fiveButton";
             this.fiveButton.Padding = new System.Windows.Forms.Padding(4, 0, 0, 2);
             this.fiveButton.Size = new System.Drawing.Size(72, 52);
-            this.fiveButton.TabIndex = 1;
+            this.fiveButton.TabIndex = 17;
             this.fiveButton.Text = "5";
             this.fiveButton.UseVisualStyleBackColor = true;
+            this.fiveButton.Click += new System.EventHandler(this.fiveButton_Click);
             // 
             // sevenButton
             // 
@@ -187,9 +198,10 @@ namespace CalculatorApplication
             this.sevenButton.Name = "sevenButton";
             this.sevenButton.Padding = new System.Windows.Forms.Padding(4, 0, 0, 2);
             this.sevenButton.Size = new System.Drawing.Size(72, 52);
-            this.sevenButton.TabIndex = 1;
+            this.sevenButton.TabIndex = 12;
             this.sevenButton.Text = "7";
             this.sevenButton.UseVisualStyleBackColor = true;
+            this.sevenButton.Click += new System.EventHandler(this.sevenButton_Click);
             // 
             // eightButton
             // 
@@ -199,9 +211,10 @@ namespace CalculatorApplication
             this.eightButton.Name = "eightButton";
             this.eightButton.Padding = new System.Windows.Forms.Padding(4, 0, 0, 2);
             this.eightButton.Size = new System.Drawing.Size(72, 52);
-            this.eightButton.TabIndex = 1;
+            this.eightButton.TabIndex = 13;
             this.eightButton.Text = "8";
             this.eightButton.UseVisualStyleBackColor = true;
+            this.eightButton.Click += new System.EventHandler(this.eightButton_Click);
             // 
             // nineButton
             // 
@@ -211,9 +224,10 @@ namespace CalculatorApplication
             this.nineButton.Name = "nineButton";
             this.nineButton.Padding = new System.Windows.Forms.Padding(4, 0, 0, 2);
             this.nineButton.Size = new System.Drawing.Size(72, 52);
-            this.nineButton.TabIndex = 1;
+            this.nineButton.TabIndex = 14;
             this.nineButton.Text = "9";
             this.nineButton.UseVisualStyleBackColor = true;
+            this.nineButton.Click += new System.EventHandler(this.nineButton_Click);
             // 
             // multiplyButton
             // 
@@ -223,7 +237,7 @@ namespace CalculatorApplication
             this.multiplyButton.Name = "multiplyButton";
             this.multiplyButton.Padding = new System.Windows.Forms.Padding(4, 0, 0, 6);
             this.multiplyButton.Size = new System.Drawing.Size(72, 52);
-            this.multiplyButton.TabIndex = 1;
+            this.multiplyButton.TabIndex = 15;
             this.multiplyButton.Text = "×";
             this.multiplyButton.UseVisualStyleBackColor = true;
             // 
@@ -235,9 +249,10 @@ namespace CalculatorApplication
             this.sixButton.Name = "sixButton";
             this.sixButton.Padding = new System.Windows.Forms.Padding(4, 0, 0, 2);
             this.sixButton.Size = new System.Drawing.Size(72, 52);
-            this.sixButton.TabIndex = 1;
+            this.sixButton.TabIndex = 18;
             this.sixButton.Text = "6";
             this.sixButton.UseVisualStyleBackColor = true;
+            this.sixButton.Click += new System.EventHandler(this.sixButton_Click);
             // 
             // subtractButton
             // 
@@ -247,7 +262,7 @@ namespace CalculatorApplication
             this.subtractButton.Name = "subtractButton";
             this.subtractButton.Padding = new System.Windows.Forms.Padding(4, 0, 0, 6);
             this.subtractButton.Size = new System.Drawing.Size(72, 52);
-            this.subtractButton.TabIndex = 2;
+            this.subtractButton.TabIndex = 19;
             this.subtractButton.Text = "−";
             this.subtractButton.UseVisualStyleBackColor = true;
             // 
@@ -259,7 +274,7 @@ namespace CalculatorApplication
             this.divideButton.Name = "divideButton";
             this.divideButton.Padding = new System.Windows.Forms.Padding(4, 0, 0, 6);
             this.divideButton.Size = new System.Drawing.Size(72, 52);
-            this.divideButton.TabIndex = 10;
+            this.divideButton.TabIndex = 11;
             this.divideButton.Text = "÷";
             this.divideButton.UseVisualStyleBackColor = true;
             // 
@@ -271,7 +286,7 @@ namespace CalculatorApplication
             this.percentButton.Name = "percentButton";
             this.percentButton.Padding = new System.Windows.Forms.Padding(4, 0, 0, 2);
             this.percentButton.Size = new System.Drawing.Size(72, 52);
-            this.percentButton.TabIndex = 4;
+            this.percentButton.TabIndex = 10;
             this.percentButton.Text = "%";
             this.percentButton.UseVisualStyleBackColor = true;
             // 
@@ -283,7 +298,7 @@ namespace CalculatorApplication
             this.memoryReadButton.Name = "memoryReadButton";
             this.memoryReadButton.Padding = new System.Windows.Forms.Padding(1, 0, 0, 0);
             this.memoryReadButton.Size = new System.Drawing.Size(72, 37);
-            this.memoryReadButton.TabIndex = 5;
+            this.memoryReadButton.TabIndex = 3;
             this.memoryReadButton.Text = "MR";
             this.memoryReadButton.UseVisualStyleBackColor = true;
             // 
@@ -295,7 +310,7 @@ namespace CalculatorApplication
             this.memoryClearButton.Name = "memoryClearButton";
             this.memoryClearButton.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
             this.memoryClearButton.Size = new System.Drawing.Size(72, 37);
-            this.memoryClearButton.TabIndex = 6;
+            this.memoryClearButton.TabIndex = 2;
             this.memoryClearButton.Text = "MC";
             this.memoryClearButton.UseVisualStyleBackColor = true;
             // 
@@ -307,7 +322,7 @@ namespace CalculatorApplication
             this.memorySubtractButton.Name = "memorySubtractButton";
             this.memorySubtractButton.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
             this.memorySubtractButton.Size = new System.Drawing.Size(72, 37);
-            this.memorySubtractButton.TabIndex = 7;
+            this.memorySubtractButton.TabIndex = 1;
             this.memorySubtractButton.Text = "M-";
             this.memorySubtractButton.UseVisualStyleBackColor = true;
             // 
@@ -319,7 +334,7 @@ namespace CalculatorApplication
             this.memoryAddButton.Name = "memoryAddButton";
             this.memoryAddButton.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
             this.memoryAddButton.Size = new System.Drawing.Size(72, 37);
-            this.memoryAddButton.TabIndex = 8;
+            this.memoryAddButton.TabIndex = 0;
             this.memoryAddButton.Text = "M+";
             this.memoryAddButton.UseVisualStyleBackColor = true;
             // 
@@ -343,7 +358,7 @@ namespace CalculatorApplication
             this.squareButton.Name = "squareButton";
             this.squareButton.Padding = new System.Windows.Forms.Padding(7, 0, 0, 2);
             this.squareButton.Size = new System.Drawing.Size(72, 52);
-            this.squareButton.TabIndex = 3;
+            this.squareButton.TabIndex = 8;
             this.squareButton.Text = "x²";
             this.squareButton.UseVisualStyleBackColor = true;
             // 
@@ -355,9 +370,10 @@ namespace CalculatorApplication
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Padding = new System.Windows.Forms.Padding(2, 0, 0, 2);
             this.deleteButton.Size = new System.Drawing.Size(72, 52);
-            this.deleteButton.TabIndex = 14;
+            this.deleteButton.TabIndex = 7;
             this.deleteButton.Text = "⌫";
             this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // clearAllButton
             // 
@@ -367,9 +383,10 @@ namespace CalculatorApplication
             this.clearAllButton.Name = "clearAllButton";
             this.clearAllButton.Padding = new System.Windows.Forms.Padding(4, 0, 0, 2);
             this.clearAllButton.Size = new System.Drawing.Size(72, 52);
-            this.clearAllButton.TabIndex = 12;
+            this.clearAllButton.TabIndex = 6;
             this.clearAllButton.Text = "C";
             this.clearAllButton.UseVisualStyleBackColor = true;
+            this.clearAllButton.Click += new System.EventHandler(this.clearAllButton_Click);
             // 
             // clearValueButton
             // 
@@ -379,9 +396,10 @@ namespace CalculatorApplication
             this.clearValueButton.Name = "clearValueButton";
             this.clearValueButton.Padding = new System.Windows.Forms.Padding(4, 0, 0, 2);
             this.clearValueButton.Size = new System.Drawing.Size(72, 52);
-            this.clearValueButton.TabIndex = 13;
+            this.clearValueButton.TabIndex = 5;
             this.clearValueButton.Text = "CE";
             this.clearValueButton.UseVisualStyleBackColor = true;
+            this.clearValueButton.Click += new System.EventHandler(this.clearValueButton_Click);
             // 
             // modButton
             // 
@@ -391,15 +409,64 @@ namespace CalculatorApplication
             this.modButton.Name = "modButton";
             this.modButton.Padding = new System.Windows.Forms.Padding(1, 0, 0, 2);
             this.modButton.Size = new System.Drawing.Size(72, 52);
-            this.modButton.TabIndex = 11;
+            this.modButton.TabIndex = 4;
             this.modButton.Text = "mod";
             this.modButton.UseVisualStyleBackColor = true;
             // 
-            // Form1
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel1.Controls.Add(this.previewLabel);
+            this.panel1.Controls.Add(this.currentNumberLabel);
+            this.panel1.Controls.Add(this.valueLabel);
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Margin = new System.Windows.Forms.Padding(0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(289, 111);
+            this.panel1.TabIndex = 15;
+            // 
+            // previewLabel
+            // 
+            this.previewLabel.Font = new System.Drawing.Font("Segoe UI", 20F);
+            this.previewLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.previewLabel.Location = new System.Drawing.Point(3, 74);
+            this.previewLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.previewLabel.Name = "previewLabel";
+            this.previewLabel.Size = new System.Drawing.Size(280, 37);
+            this.previewLabel.TabIndex = 30;
+            this.previewLabel.Text = "1213959008";
+            this.previewLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // currentNumberLabel
+            // 
+            this.currentNumberLabel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.currentNumberLabel.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.currentNumberLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.currentNumberLabel.Location = new System.Drawing.Point(0, 0);
+            this.currentNumberLabel.Name = "currentNumberLabel";
+            this.currentNumberLabel.Padding = new System.Windows.Forms.Padding(3, 3, 0, 0);
+            this.currentNumberLabel.Size = new System.Drawing.Size(289, 27);
+            this.currentNumberLabel.TabIndex = 28;
+            this.currentNumberLabel.Text = "9634880+";
+            // 
+            // valueLabel
+            // 
+            this.valueLabel.Font = new System.Drawing.Font("Segoe UI", 36F);
+            this.valueLabel.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.valueLabel.Location = new System.Drawing.Point(0, 20);
+            this.valueLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.valueLabel.Name = "valueLabel";
+            this.valueLabel.Size = new System.Drawing.Size(292, 91);
+            this.valueLabel.TabIndex = 29;
+            this.valueLabel.Text = "1204324128";
+            this.valueLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(295, 473);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.zeroButton);
             this.Controls.Add(this.oneButton);
             this.Controls.Add(this.twoButton);
@@ -430,10 +497,13 @@ namespace CalculatorApplication
             this.Controls.Add(this.negateButton);
             this.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.Text = "Calculator";
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MainForm_KeyDown);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -467,6 +537,10 @@ namespace CalculatorApplication
         private System.Windows.Forms.Button clearAllButton;
         private System.Windows.Forms.Button clearValueButton;
         private System.Windows.Forms.Button modButton;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label previewLabel;
+        private System.Windows.Forms.Label valueLabel;
+        private System.Windows.Forms.Label currentNumberLabel;
     }
 }
 
