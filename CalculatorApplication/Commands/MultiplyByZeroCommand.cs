@@ -4,27 +4,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CalculatorApplication
+namespace CalculatorApplication.Commands
 {
-    public class MultiplyCommand : ICommand
+    class MultiplyByZeroCommand
     {
         private Calculator calculator;
-        private double value;
+        private double previousValue;
 
-        public MultiplyCommand(Calculator calculator, double value)
+        public MultiplyByZeroCommand(Calculator calculator)
         {
             this.calculator = calculator;
-            this.value = value;
         }
 
         public void Execute()
         {
-            calculator.Multiply(value);
+            previousValue = calculator.TemporaryValue;
+            calculator.Multiply(0);
         }
 
         public void Unexecute()
         {
-            calculator.Divide(value);
+            calculator.Add(previousValue);
         }
     }
 }

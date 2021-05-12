@@ -163,6 +163,7 @@ namespace CalculatorApplication
             this.addButton.TabIndex = 23;
             this.addButton.Text = "+";
             this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
             // fourButton
             // 
