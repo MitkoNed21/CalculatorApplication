@@ -21,9 +21,9 @@ namespace CalculatorApplication
             InitializeComponent();
 
             this.calculator = new Calculator();
-            this.valueLabel.Text = calculator.CurrentValue.ToString();
-            this.previewLabel.Text = "";
-            this.currentNumberLabel.Text = "";
+            this.currentValueLabel.Text = calculator.CurrentValue.ToString();
+            this.previewValueLabel.Text = "";
+            this.temporaryValueLabel.Text = "";
             this.executingOperation = false;
 
             this.addedNumbers = new Stack<AddNumberCommand>();
@@ -175,7 +175,7 @@ namespace CalculatorApplication
 
         private void AddNumberToCalculatorScreen(int number)
         {
-            if (this.valueLabel.Text.Length == 15) return;
+            if (this.currentValueLabel.Text.Length == 15) return;
 
             AddNumberCommand c = new AddNumberCommand(calculator, number);
             addedNumbers.Push(c);
@@ -184,16 +184,21 @@ namespace CalculatorApplication
 
         private void UpdateCalculatorScreen()
         {
-            this.valueLabel.Text = calculator.CurrentValue.ToString();
+            this.currentValueLabel.Text = calculator.CurrentValue.ToString();
 
-            int numberLength = this.valueLabel.Text.Length;
+            int numberLength = this.currentValueLabel.Text.Length;
 
             if (numberLength == 10)
-                this.valueLabel.Font = new Font(this.valueLabel.Font.FontFamily, 36);
+                this.currentValueLabel.Font = new Font(this.currentValueLabel.Font.FontFamily, 36);
             else if (numberLength == 11 || numberLength == 13)
-                this.valueLabel.Font = new Font(this.valueLabel.Font.FontFamily, 28);
+                this.currentValueLabel.Font = new Font(this.currentValueLabel.Font.FontFamily, 28);
             else if (numberLength == 14)
-                this.valueLabel.Font = new Font(this.valueLabel.Font.FontFamily, 24);
+                this.currentValueLabel.Font = new Font(this.currentValueLabel.Font.FontFamily, 24);
+        }
+
+        private void addButton_Click(object sender, EventArgs e)
+        {
+            //this.currentNumberLabel
         }
     }
 }

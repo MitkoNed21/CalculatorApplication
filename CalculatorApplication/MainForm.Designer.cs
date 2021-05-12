@@ -58,9 +58,9 @@ namespace CalculatorApplication
             this.clearValueButton = new System.Windows.Forms.Button();
             this.modButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.previewLabel = new System.Windows.Forms.Label();
-            this.currentNumberLabel = new System.Windows.Forms.Label();
-            this.valueLabel = new System.Windows.Forms.Label();
+            this.previewValueLabel = new System.Windows.Forms.Label();
+            this.temporaryValueLabel = new System.Windows.Forms.Label();
+            this.currentValueLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -417,50 +417,50 @@ namespace CalculatorApplication
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel1.Controls.Add(this.previewLabel);
-            this.panel1.Controls.Add(this.currentNumberLabel);
-            this.panel1.Controls.Add(this.valueLabel);
+            this.panel1.Controls.Add(this.previewValueLabel);
+            this.panel1.Controls.Add(this.temporaryValueLabel);
+            this.panel1.Controls.Add(this.currentValueLabel);
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(289, 111);
             this.panel1.TabIndex = 15;
             // 
-            // previewLabel
+            // previewValueLabel
             // 
-            this.previewLabel.Font = new System.Drawing.Font("Segoe UI", 20F);
-            this.previewLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.previewLabel.Location = new System.Drawing.Point(3, 74);
-            this.previewLabel.Margin = new System.Windows.Forms.Padding(0);
-            this.previewLabel.Name = "previewLabel";
-            this.previewLabel.Size = new System.Drawing.Size(280, 37);
-            this.previewLabel.TabIndex = 30;
-            this.previewLabel.Text = "1213959008";
-            this.previewLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.previewValueLabel.Font = new System.Drawing.Font("Segoe UI", 20F);
+            this.previewValueLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.previewValueLabel.Location = new System.Drawing.Point(3, 74);
+            this.previewValueLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.previewValueLabel.Name = "previewValueLabel";
+            this.previewValueLabel.Size = new System.Drawing.Size(280, 37);
+            this.previewValueLabel.TabIndex = 30;
+            this.previewValueLabel.Text = "1213959008";
+            this.previewValueLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // currentNumberLabel
+            // temporaryValueLabel
             // 
-            this.currentNumberLabel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.currentNumberLabel.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.currentNumberLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.currentNumberLabel.Location = new System.Drawing.Point(0, 0);
-            this.currentNumberLabel.Name = "currentNumberLabel";
-            this.currentNumberLabel.Padding = new System.Windows.Forms.Padding(3, 3, 0, 0);
-            this.currentNumberLabel.Size = new System.Drawing.Size(289, 27);
-            this.currentNumberLabel.TabIndex = 28;
-            this.currentNumberLabel.Text = "9634880+";
+            this.temporaryValueLabel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.temporaryValueLabel.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.temporaryValueLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.temporaryValueLabel.Location = new System.Drawing.Point(0, 0);
+            this.temporaryValueLabel.Name = "temporaryValueLabel";
+            this.temporaryValueLabel.Padding = new System.Windows.Forms.Padding(3, 3, 0, 0);
+            this.temporaryValueLabel.Size = new System.Drawing.Size(289, 27);
+            this.temporaryValueLabel.TabIndex = 28;
+            this.temporaryValueLabel.Text = "9634880+";
             // 
-            // valueLabel
+            // currentValueLabel
             // 
-            this.valueLabel.Font = new System.Drawing.Font("Segoe UI", 36F);
-            this.valueLabel.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.valueLabel.Location = new System.Drawing.Point(0, 20);
-            this.valueLabel.Margin = new System.Windows.Forms.Padding(0);
-            this.valueLabel.Name = "valueLabel";
-            this.valueLabel.Size = new System.Drawing.Size(292, 91);
-            this.valueLabel.TabIndex = 29;
-            this.valueLabel.Text = "1204324128";
-            this.valueLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.currentValueLabel.Font = new System.Drawing.Font("Segoe UI", 36F);
+            this.currentValueLabel.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.currentValueLabel.Location = new System.Drawing.Point(0, 20);
+            this.currentValueLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.currentValueLabel.Name = "currentValueLabel";
+            this.currentValueLabel.Size = new System.Drawing.Size(292, 91);
+            this.currentValueLabel.TabIndex = 29;
+            this.currentValueLabel.Text = "1204324128";
+            this.currentValueLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // MainForm
             // 
@@ -539,9 +539,9 @@ namespace CalculatorApplication
         private System.Windows.Forms.Button clearValueButton;
         private System.Windows.Forms.Button modButton;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label previewLabel;
-        private System.Windows.Forms.Label valueLabel;
-        private System.Windows.Forms.Label currentNumberLabel;
+        private System.Windows.Forms.Label previewValueLabel;
+        private System.Windows.Forms.Label currentValueLabel;
+        private System.Windows.Forms.Label temporaryValueLabel;
     }
 }
 
