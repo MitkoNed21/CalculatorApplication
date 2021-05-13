@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CalculatorApplication
+namespace CalculatorApplication.Commands
 {
-    interface ICommand
+    public interface ICommand
     {
         void Execute();
         void Unexecute();

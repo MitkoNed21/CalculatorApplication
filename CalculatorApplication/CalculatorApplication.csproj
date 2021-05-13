@@ -49,10 +49,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Commands\AddCommand.cs" />
-    <Compile Include="Commands\AddNumberCommand.cs" />
     <Compile Include="Calculator.cs" />
     <Compile Include="Commands\DivideCommand.cs" />
     <Compile Include="Commands\MultiplyByZeroCommand.cs" />
+    <Compile Include="CommandHistory.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

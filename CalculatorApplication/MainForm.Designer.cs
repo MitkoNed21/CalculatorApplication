@@ -61,6 +61,8 @@ namespace CalculatorApplication
             this.previewValueLabel = new System.Windows.Forms.Label();
             this.temporaryValueLabel = new System.Windows.Forms.Label();
             this.currentValueLabel = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.operationLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,6 +77,7 @@ namespace CalculatorApplication
             this.negateButton.TabIndex = 24;
             this.negateButton.Text = "±";
             this.negateButton.UseVisualStyleBackColor = true;
+            this.negateButton.Click += new System.EventHandler(this.negateButton_Click);
             // 
             // zeroButton
             // 
@@ -100,6 +103,7 @@ namespace CalculatorApplication
             this.decimalPointButton.TabIndex = 26;
             this.decimalPointButton.Text = ".";
             this.decimalPointButton.UseVisualStyleBackColor = true;
+            this.decimalPointButton.Click += new System.EventHandler(this.decimalPointButton_Click);
             // 
             // resultButton
             // 
@@ -112,6 +116,7 @@ namespace CalculatorApplication
             this.resultButton.TabIndex = 27;
             this.resultButton.Text = "=";
             this.resultButton.UseVisualStyleBackColor = true;
+            this.resultButton.Click += new System.EventHandler(this.resultButton_Click);
             // 
             // oneButton
             // 
@@ -241,6 +246,7 @@ namespace CalculatorApplication
             this.multiplyButton.TabIndex = 15;
             this.multiplyButton.Text = "×";
             this.multiplyButton.UseVisualStyleBackColor = true;
+            this.multiplyButton.Click += new System.EventHandler(this.multiplyButton_Click);
             // 
             // sixButton
             // 
@@ -266,6 +272,7 @@ namespace CalculatorApplication
             this.subtractButton.TabIndex = 19;
             this.subtractButton.Text = "−";
             this.subtractButton.UseVisualStyleBackColor = true;
+            this.subtractButton.Click += new System.EventHandler(this.subtractButton_Click);
             // 
             // divideButton
             // 
@@ -278,6 +285,7 @@ namespace CalculatorApplication
             this.divideButton.TabIndex = 11;
             this.divideButton.Text = "÷";
             this.divideButton.UseVisualStyleBackColor = true;
+            this.divideButton.Click += new System.EventHandler(this.divideButton_Click);
             // 
             // percentButton
             // 
@@ -293,6 +301,7 @@ namespace CalculatorApplication
             // 
             // memoryReadButton
             // 
+            this.memoryReadButton.Enabled = false;
             this.memoryReadButton.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.memoryReadButton.Location = new System.Drawing.Point(221, 116);
             this.memoryReadButton.Margin = new System.Windows.Forms.Padding(0);
@@ -302,9 +311,11 @@ namespace CalculatorApplication
             this.memoryReadButton.TabIndex = 3;
             this.memoryReadButton.Text = "MR";
             this.memoryReadButton.UseVisualStyleBackColor = true;
+            this.memoryReadButton.Click += new System.EventHandler(this.memoryReadButton_Click);
             // 
             // memoryClearButton
             // 
+            this.memoryClearButton.Enabled = false;
             this.memoryClearButton.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.memoryClearButton.Location = new System.Drawing.Point(148, 116);
             this.memoryClearButton.Margin = new System.Windows.Forms.Padding(0);
@@ -314,6 +325,7 @@ namespace CalculatorApplication
             this.memoryClearButton.TabIndex = 2;
             this.memoryClearButton.Text = "MC";
             this.memoryClearButton.UseVisualStyleBackColor = true;
+            this.memoryClearButton.Click += new System.EventHandler(this.memoryClearButton_Click);
             // 
             // memorySubtractButton
             // 
@@ -326,6 +338,7 @@ namespace CalculatorApplication
             this.memorySubtractButton.TabIndex = 1;
             this.memorySubtractButton.Text = "M-";
             this.memorySubtractButton.UseVisualStyleBackColor = true;
+            this.memorySubtractButton.Click += new System.EventHandler(this.memorySubtractButton_Click);
             // 
             // memoryAddButton
             // 
@@ -338,6 +351,7 @@ namespace CalculatorApplication
             this.memoryAddButton.TabIndex = 0;
             this.memoryAddButton.Text = "M+";
             this.memoryAddButton.UseVisualStyleBackColor = true;
+            this.memoryAddButton.Click += new System.EventHandler(this.memoryAddButton_Click);
             // 
             // squareRootButton
             // 
@@ -350,6 +364,7 @@ namespace CalculatorApplication
             this.squareRootButton.TabIndex = 9;
             this.squareRootButton.Text = "√";
             this.squareRootButton.UseVisualStyleBackColor = true;
+            this.squareRootButton.Click += new System.EventHandler(this.squareRootButton_Click);
             // 
             // squareButton
             // 
@@ -362,6 +377,7 @@ namespace CalculatorApplication
             this.squareButton.TabIndex = 8;
             this.squareButton.Text = "x²";
             this.squareButton.UseVisualStyleBackColor = true;
+            this.squareButton.Click += new System.EventHandler(this.squareButton_Click);
             // 
             // deleteButton
             // 
@@ -417,6 +433,7 @@ namespace CalculatorApplication
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel1.Controls.Add(this.operationLabel);
             this.panel1.Controls.Add(this.previewValueLabel);
             this.panel1.Controls.Add(this.temporaryValueLabel);
             this.panel1.Controls.Add(this.currentValueLabel);
@@ -440,15 +457,14 @@ namespace CalculatorApplication
             // 
             // temporaryValueLabel
             // 
-            this.temporaryValueLabel.Dock = System.Windows.Forms.DockStyle.Top;
             this.temporaryValueLabel.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.temporaryValueLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
             this.temporaryValueLabel.Location = new System.Drawing.Point(0, 0);
             this.temporaryValueLabel.Name = "temporaryValueLabel";
             this.temporaryValueLabel.Padding = new System.Windows.Forms.Padding(3, 3, 0, 0);
-            this.temporaryValueLabel.Size = new System.Drawing.Size(289, 27);
+            this.temporaryValueLabel.Size = new System.Drawing.Size(252, 27);
             this.temporaryValueLabel.TabIndex = 28;
-            this.temporaryValueLabel.Text = "9634880+";
+            this.temporaryValueLabel.Text = "9634880";
             // 
             // currentValueLabel
             // 
@@ -462,11 +478,34 @@ namespace CalculatorApplication
             this.currentValueLabel.Text = "1204324128";
             this.currentValueLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.Control;
+            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(295, 3);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(208, 470);
+            this.flowLayoutPanel1.TabIndex = 28;
+            this.flowLayoutPanel1.WrapContents = false;
+            // 
+            // operationLabel
+            // 
+            this.operationLabel.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.operationLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.operationLabel.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.operationLabel.Location = new System.Drawing.Point(252, 0);
+            this.operationLabel.Name = "operationLabel";
+            this.operationLabel.Padding = new System.Windows.Forms.Padding(3, 3, 0, 0);
+            this.operationLabel.Size = new System.Drawing.Size(37, 27);
+            this.operationLabel.TabIndex = 31;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(295, 473);
+            this.ClientSize = new System.Drawing.Size(506, 473);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.zeroButton);
             this.Controls.Add(this.oneButton);
@@ -542,6 +581,8 @@ namespace CalculatorApplication
         private System.Windows.Forms.Label previewValueLabel;
         private System.Windows.Forms.Label currentValueLabel;
         private System.Windows.Forms.Label temporaryValueLabel;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Label operationLabel;
     }
 }
 

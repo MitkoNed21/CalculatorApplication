@@ -9,20 +9,17 @@ namespace CalculatorApplication
     public class Calculator
     {
         private double currentValue;
-        private double memoryValue;
-        private double tempValue;
+        private double? memoryValue;
+        private double? tempValue;
 
         public double CurrentValue
         {
             get { return currentValue; }
         }
 
-        public double MemoryValue
-        {
-            get { return memoryValue; }
-        }
+        public bool HasMemoryValue => !(this.memoryValue is null);
 
-        public double TemporaryValue
+        public double? TemporaryValue // will it be good if this is also nullable?
         {
             get { return tempValue; }
         }
@@ -30,7 +27,7 @@ namespace CalculatorApplication
         public Calculator()
         {
             currentValue = 0;
-            memoryValue = 0;
+            memoryValue = null;
         }
 
         public void Add(double value)
@@ -54,29 +51,39 @@ namespace CalculatorApplication
             this.currentValue /= value;
         }
 
-        public void MemoryAdd(double value)
+        public void AddToMemory(double value)
         {
             this.memoryValue += value;
         }
 
-        public void MemorySubtract(double value)
+        public void SubtractFromMemory(double value)
         {
             this.memoryValue -= value;
         }
 
-        public void MemoryRead()
+        public double ReadMemoryValue()
         {
-            this.currentValue = memoryValue;
+            if (this.memoryValue is null)
+            {
+                throw new InvalidOperationException("Calculator has nothing in memory!");
+            }
+
+            return memoryValue.Value;
         }
 
-        public void MemoryClear()
+        public void ClearMemory()
         {
-            this.memoryValue = 0;
+            this.memoryValue = null;
         }
 
         public void ClearAll()
         {
             this.currentValue = 0;
+        }
+
+        internal void InitializeMemory()
+        {
+            this.memoryValue = 0;
         }
     }
 }

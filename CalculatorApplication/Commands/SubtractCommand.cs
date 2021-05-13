@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CalculatorApplication
+namespace CalculatorApplication.Commands
 {
     public class SubtractCommand : ICommand
     {

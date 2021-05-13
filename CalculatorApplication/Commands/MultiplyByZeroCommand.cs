@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CalculatorApplication.Commands
 {
-    class MultiplyByZeroCommand
+    class MultiplyByZeroCommand : ICommand
     {
         private Calculator calculator;
         private double previousValue;
@@ -18,7 +18,7 @@ namespace CalculatorApplication.Commands
 
         public void Execute()
         {
-            previousValue = calculator.TemporaryValue;
+            previousValue = calculator.CurrentValue;
             calculator.Multiply(0);
         }
 
