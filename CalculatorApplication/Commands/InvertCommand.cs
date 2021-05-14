@@ -6,27 +6,25 @@ using System.Threading.Tasks;
 
 namespace CalculatorApplication.Commands
 {
-    public class DivideCommand : ICommandWithValue
+    public class InvertCommand : ICommand
     {
         private readonly Calculator calculator;
-        private readonly double value;
+        private double previousValue;
 
-        public double Value => value;
-
-        public DivideCommand(Calculator calculator, double value)
+        public InvertCommand(Calculator calculator)
         {
             this.calculator = calculator;
-            this.value = value;
         }
 
         public void Execute()
         {
-            calculator.Divide(value);
+            previousValue = calculator.CurrentValue;
+            calculator.Invert();
         }
 
         public void Unexecute()
         {
-            calculator.Multiply(value);
+            calculator.SetValue(previousValue);
         }
     }
 }

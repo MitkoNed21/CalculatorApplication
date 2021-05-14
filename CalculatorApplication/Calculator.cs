@@ -10,7 +10,6 @@ namespace CalculatorApplication
     {
         private double currentValue;
         private double? memoryValue;
-        private double? tempValue;
 
         public double CurrentValue
         {
@@ -18,11 +17,6 @@ namespace CalculatorApplication
         }
 
         public bool HasMemoryValue => !(this.memoryValue is null);
-
-        public double? TemporaryValue // will it be good if this is also nullable?
-        {
-            get { return tempValue; }
-        }
 
         public Calculator()
         {
@@ -32,33 +26,65 @@ namespace CalculatorApplication
 
         public void Add(double value)
         {
-            this.currentValue += value;
+            double newValue = this.currentValue + value;
+            ThrowIfOverflow(newValue);
+
+            this.currentValue = newValue;
         }
 
         public void Subtract(double value)
         {
-            this.currentValue -= value;
+            double newValue = this.currentValue - value;
+            ThrowIfOverflow(newValue);
+
+            this.currentValue = newValue;
         }
 
         public void Multiply(double value)
         {
-            this.currentValue *= value;
+            double newValue = this.currentValue * value;
+            ThrowIfOverflow(newValue);
+
+            this.currentValue = newValue;
         }
 
         public void Divide(double value)
         {
-            //TODO: Where should be check for 0?
-            this.currentValue /= value;
+            double newValue = this.currentValue / value;
+            ThrowIfOverflow(newValue);
+
+            this.currentValue = newValue;
+        }
+        public void SquareRoot()
+        {
+            double newValue = Math.Sqrt(this.currentValue);
+            ThrowIfOverflow(newValue);
+
+            this.currentValue = newValue;
+        }
+
+        public void Invert()
+        {
+            double newValue = 1 / this.currentValue;
+            ThrowIfOverflow(newValue);
+
+            this.currentValue = newValue;
         }
 
         public void AddToMemory(double value)
         {
-            this.memoryValue += value;
+            double newValue = this.memoryValue.Value + value;
+            ThrowIfMemoryOverflow(newValue);
+
+            this.memoryValue = newValue;
         }
 
         public void SubtractFromMemory(double value)
         {
-            this.memoryValue -= value;
+            double newValue = this.memoryValue.Value - value;
+            ThrowIfMemoryOverflow(newValue);
+
+            this.memoryValue = newValue;
         }
 
         public double ReadMemoryValue()
@@ -76,14 +102,36 @@ namespace CalculatorApplication
             this.memoryValue = null;
         }
 
-        public void ClearAll()
+        public void Clear()
         {
             this.currentValue = 0;
         }
 
-        internal void InitializeMemory()
+        public void SetValue(double value)
+        {
+            ThrowIfOverflow(value);
+            this.currentValue = value;
+        }
+
+        public void InitializeMemory()
         {
             this.memoryValue = 0;
+        }
+
+        private void ThrowIfOverflow(double value)
+        {
+            if (double.IsInfinity(value))
+            {
+                throw new OverflowException("The calculator's value has overflown!");
+            }
+        }
+
+        private void ThrowIfMemoryOverflow(double value)
+        {
+            if (double.IsInfinity(value))
+            {
+                throw new OverflowException("The calculator's memory has overflown!");
+            }
         }
     }
 }

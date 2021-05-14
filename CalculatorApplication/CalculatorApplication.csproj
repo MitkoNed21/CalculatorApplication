@@ -50,9 +50,15 @@
   <ItemGroup>
     <Compile Include="Commands\AddCommand.cs" />
     <Compile Include="Calculator.cs" />
+    <Compile Include="Commands\CalculatePercentOfSelfCommand.cs" />
+    <Compile Include="Commands\CalculateZeroPercentOfSelfCommand.cs" />
     <Compile Include="Commands\DivideCommand.cs" />
+    <Compile Include="Commands\InvertCommand.cs" />
     <Compile Include="Commands\MultiplyByZeroCommand.cs" />
     <Compile Include="CommandHistory.cs" />
+    <Compile Include="Commands\ICommandWithValue.cs" />
+    <Compile Include="Commands\SquareCommand.cs" />
+    <Compile Include="Commands\SquareRootCommand.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

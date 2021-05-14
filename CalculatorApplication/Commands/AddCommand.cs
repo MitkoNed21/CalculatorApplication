@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace CalculatorApplication.Commands
 {
-    public class AddCommand : ICommand
+    public class AddCommand : ICommandWithValue
     {
-        private Calculator calculator;
-        private double value;
+        private readonly Calculator calculator;
+        private readonly double value;
+        
+        public double Value => value;
 
         public AddCommand(Calculator calculator, double value)
         {

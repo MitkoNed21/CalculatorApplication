@@ -6,27 +6,23 @@ using System.Threading.Tasks;
 
 namespace CalculatorApplication.Commands
 {
-    public class DivideCommand : ICommandWithValue
+    public class SquareCommand : ICommand
     {
         private readonly Calculator calculator;
-        private readonly double value;
 
-        public double Value => value;
-
-        public DivideCommand(Calculator calculator, double value)
+        public SquareCommand(Calculator calculator)
         {
             this.calculator = calculator;
-            this.value = value;
         }
 
         public void Execute()
         {
-            calculator.Divide(value);
+            calculator.Multiply(calculator.CurrentValue);
         }
 
         public void Unexecute()
         {
-            calculator.Multiply(value);
+            calculator.SquareRoot();
         }
     }
 }

@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace CalculatorApplication.Commands
 {
-    class MultiplyByZeroCommand : ICommand
+    class MultiplyByZeroCommand : ICommandWithValue
     {
         private Calculator calculator;
         private double previousValue;
+
+        public double Value => 0;
 
         public MultiplyByZeroCommand(Calculator calculator)
         {
@@ -24,7 +26,7 @@ namespace CalculatorApplication.Commands
 
         public void Unexecute()
         {
-            calculator.Add(previousValue);
+            calculator.SetValue(previousValue);
         }
     }
 }

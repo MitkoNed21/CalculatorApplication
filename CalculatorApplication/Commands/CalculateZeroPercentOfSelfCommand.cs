@@ -6,27 +6,26 @@ using System.Threading.Tasks;
 
 namespace CalculatorApplication.Commands
 {
-    public class DivideCommand : ICommandWithValue
+    public class CalculateZeroPercentOfSelfCommand : ICommand
     {
         private readonly Calculator calculator;
-        private readonly double value;
+        private double previousValue;
 
-        public double Value => value;
-
-        public DivideCommand(Calculator calculator, double value)
+        public CalculateZeroPercentOfSelfCommand(Calculator calculator)
         {
             this.calculator = calculator;
-            this.value = value;
         }
 
         public void Execute()
         {
-            calculator.Divide(value);
+            previousValue = calculator.CurrentValue;
+            calculator.Clear();
         }
 
         public void Unexecute()
         {
-            calculator.Multiply(value);
+            calculator.SetValue(previousValue);
         }
+        
     }
 }
